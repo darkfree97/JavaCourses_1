@@ -23,12 +23,16 @@ public class Main {
         Run runCosmicProbe = new CosmicProbe(10000,30000,"Plutonium","Platinum","Reactive",5,true);
         runs.add(runCosmicProbe);
         runs.forEach(item->{
-            System.out.println(""+item);
-            System.out.println(""+item.getTransportName());
-            System.out.println(""+item.getCountMotionTransmissionMeans());
-            System.out.println(""+item.getSpeed());
-            System.out.println(""+item.getMass());
-            System.out.println(""+item.getCountPassengers());
+            System.out.println("Виведення об'єкта: "+item);
+            System.out.println("Ім'я транспорту: "+item.getTransportName());
+            System.out.println("Кількість засобів пересування: "+item.getCountMotionTransmissionMeans());
+            System.out.println("Швидкість пересування: "+item.getSpeed());
+            System.out.println("Маса транспорту: "+item.getMass());
+            System.out.println("Кількість пасажирів: "+item.getCountPassengers());
+            System.out.println("Хеш код: "+item.hashCode());
+            System.out.print(item.getTransportName()+".equals(): | ");
+            runs.forEach(run -> System.out.print("With "+run.getTransportName()+" = "+item.equals(run)+" | "));
+            System.out.println("\n____________________________________________________________\n");
         });
 
     }
