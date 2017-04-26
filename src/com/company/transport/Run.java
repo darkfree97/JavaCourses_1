@@ -6,7 +6,7 @@ package com.company.transport;
 public interface Run {
     String getTransportName();
     int getSpeed();
-    int getMass(); // Вага
-    int getCountPassangers(); // К-ть пасажирів
+    double getMass(); // Вага
+    int getCountPassengers(); // К-ть пасажирів
     int getCountMotionTransmissionMeans();// Засоби передачі руху
 }

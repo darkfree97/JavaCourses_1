@@ -100,14 +100,36 @@ public class Bicycle extends Machine {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int result;
+        long temp;
+        temp = Double.doubleToLongBits(mass);
+        result = (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(wheelDiametr);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (bell ? 1 : 0);
+        result = 31 * result + (headlights ? 1 : 0);
+        result = 31 * result + (amortization ? 1 : 0);
+        result = 31 * result + (electricDrive ? 1 : 0);
+        result = 31 * result + passangersCount;
+        result = 31 * result + countMotionTransmissionMeans;
+        return result;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (Objects.equals(obj.toString().intern(), this.toString().intern()))
-            return true;
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Bicycle bicycle = (Bicycle) o;
+
+        if (Double.compare(bicycle.mass, mass) != 0) return false;
+        if (Double.compare(bicycle.wheelDiametr, wheelDiametr) != 0) return false;
+        if (bell != bicycle.bell) return false;
+        if (headlights != bicycle.headlights) return false;
+        if (amortization != bicycle.amortization) return false;
+        if (electricDrive != bicycle.electricDrive) return false;
+        if (passangersCount != bicycle.passangersCount) return false;
+        return countMotionTransmissionMeans == bicycle.countMotionTransmissionMeans;
     }
 
     @Override

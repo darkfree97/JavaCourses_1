@@ -32,9 +32,4 @@ public class ChildBicycle extends Bicycle{
     public void setParentalControlCnob(boolean parentalControlCnob) {
         this.parentalControlCnob = parentalControlCnob;
     }
-
-    @Override
-    public int getCountMotionTransmissionMeans() {
-        return 0;
-    }
 }

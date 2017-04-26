@@ -4,12 +4,13 @@ package com.company.transport;
  * Created by darkfree on 26.04.17.
  */
 abstract public class Machine implements Run {
-    final int MAX_SPEED = 1000;
-    final int MIN_SPEED = 0;
-    final int MIN_COUNT_PASSANGERS = 1;
-    final int MAX_COUNT_PASSANGERS = 20;
+    protected final int MAX_SPEED = 1000;
+    protected final int MIN_SPEED = 0;
+    protected final int MIN_COUNT_PASSENGERS = 1;
+    final int MAX_COUNT_PASSENGERS = 20;
     private String transportName;
     private int currentSpeed;
+    private String manufacturer;
 
     public Machine() {
     }
@@ -34,5 +35,12 @@ abstract public class Machine implements Run {
 
     public void setCurrentSpeed(int currentSpeed) {
         this.currentSpeed = currentSpeed;
+    }
+
+    @Override
+    public String toString() {
+        return  "transportName='" + transportName + '\'' +
+                ", currentSpeed=" + currentSpeed +
+                ", manufacturer='" + manufacturer+ "'";
     }
 }

@@ -15,11 +15,6 @@ public class SimpleBicycle extends Bicycle {
     }
 
     @Override
-    public int getCountMotionTransmissionMeans() {
-        return 0;
-    }
-
-    @Override
     public String toString() {
         return "SimpleBicycle{" +super.toString()+
                 ", brakes=" + brakes +
