@@ -43,4 +43,9 @@ abstract public class Machine implements Run {
                 ", currentSpeed=" + currentSpeed +
                 ", manufacturer='" + manufacturer+ "'";
     }
+
+    @Override
+    public int compareTo(Run o) {
+        return this.getTransportName().compareTo(o.getTransportName());
+    }
 }
